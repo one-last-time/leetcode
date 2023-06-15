@@ -6,7 +6,7 @@ class Solution:
         for s in strs:
             sum = 0
             for i in s:
-                sum += 1 << (ord(i) - ord('a'))
+                sum += pow((ord(i) - ord('a') + 1) , 12) # 3^12/2^12 > 100
             index = index_map.get(sum)
             if index is not None:
                 res[index].append(s)
@@ -15,6 +15,5 @@ class Solution:
                 next_index += 1
                 res.append([s])
         return res
-
 
 
